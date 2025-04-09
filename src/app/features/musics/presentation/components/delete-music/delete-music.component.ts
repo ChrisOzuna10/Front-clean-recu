@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeleteMusicViewModel } from '../../viewmodels/DeleteMusicViewModel';
 import { ActivatedRoute } from '@angular/router';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-delete-music',
   standalone: true,
@@ -36,9 +36,13 @@ export class DeleteMusicComponent implements OnInit {
 
     try {
       await this.deleteViewModel.deleteMusic(this.musicId!);
-      this.message = `✅ Música con ID ${this.musicId} eliminada correctamente.`;
+      Swal.fire({
+        icon: 'success',
+        title: 'Música eliminada',
+        text: 'La música ha sido eliminada correctamente.',
+        confirmButtonText: 'Aceptar'
+      });
     } catch (err) {
-      this.error = '❌ Error al eliminar la música.';
       console.error(err);
     }
   }

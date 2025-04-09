@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { MusicViewModel } from '../../viewmodels/ViewMusicViewModel';
 import { Router } from '@angular/router';
 import { DeleteMusicViewModel } from '../../viewmodels/DeleteMusicViewModel';
-
+import { RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   selector: 'app-view-all-musics',
   templateUrl: './view-all-musics.component.html',
   styleUrls: ['./view-all-musics.component.css']
@@ -47,14 +48,38 @@ export class ViewAllMusicsComponent implements OnInit {
   }
 
   onDelete(id: number): void {
-    if (confirm('¿Estás seguro de que deseas eliminar esta música?')) {
-      this.deleteViewModel.deleteMusic(id)
-        .then(() => {
-          this.musics = this.musics.filter(music => music.id !== id);
-        })
-        .catch(err => {
-          this.error = err.message || 'Error al eliminar la música';
-        });
-    }
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará la música permanentemente',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteViewModel.deleteMusic(id)
+          .then(() => {
+            this.musics = this.musics.filter(music => music.id !== id);
+            Swal.fire({
+              icon: 'success',
+              title: '¡Música eliminada!',
+              text: 'La música fue eliminada correctamente 🎵',
+              confirmButtonText: 'OK'
+            });
+          })
+          .catch(err => {
+            this.error = err.message || 'Error al eliminar la música';
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: this.error || 'Ha ocurrido un error desconocido',
+              confirmButtonText: 'Entendido'
+            });
+          });
+      }
+    });
   }
+  
 }

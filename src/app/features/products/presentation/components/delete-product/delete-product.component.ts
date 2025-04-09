@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { DeleteProductViewModel } from '../../viewmodels/DeleteProductViewModel';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-delete-product',
   standalone: true,
@@ -39,6 +39,12 @@ export class DeleteProductComponent implements OnInit {
 
     try {
       await this.deleteViewModel.deleteProduct(this.productId!);
+      Swal.fire({
+        icon: 'success',
+        title: 'Producto eliminado!',
+        text: `El producto con ID ${this.productId} fue eliminado correctamente.`,
+        confirmButtonText: 'OK'
+      })
       this.message = `✅ Producto con ID ${this.productId} eliminado correctamente.`;
     } catch (err) {
       this.error = '❌ Error al eliminar el producto.';

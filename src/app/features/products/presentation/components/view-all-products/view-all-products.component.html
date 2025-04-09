@@ -1,6 +1,8 @@
 <div *ngIf="isLoading">Loading...</div>
 <div *ngIf="error">{{ error }}</div>
-
+<a routerLink="/products" class="back-button">
+  ⬅️ Volver al Dashboard Principal
+</a>
 <div *ngIf="!isLoading && !error">
   <ul>
     <li *ngFor="let product of products" class="product-item">

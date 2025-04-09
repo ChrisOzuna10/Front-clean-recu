@@ -1,6 +1,8 @@
 <div *ngIf="isLoading">Loading...</div>
 <div *ngIf="error">{{ error }}</div>
-
+<a routerLink="/musics" class="back-button">
+  ⬅️ Volver al Dashboard Principal
+</a>
 <div *ngIf="!isLoading && !error">
   <ul>
     <li *ngFor="let music of musics" class="music-item">

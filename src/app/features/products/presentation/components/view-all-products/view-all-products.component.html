@@ -1,0 +1,14 @@
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div *ngIf="!isLoading && !error">
+  <ul>
+    <li *ngFor="let product of products" class="product-item">
+      <h3>{{ product.name }}</h3>
+      <p>Precio: ${{ product.price }}</p>
+
+      <button (click)="onEdit(product.id)">✏️ Editar</button>
+      <button (click)="onDelete(product.id)">🗑️ Eliminar</button>
+    </li>
+  </ul>
+</div>

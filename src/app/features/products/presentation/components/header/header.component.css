@@ -1,0 +1,38 @@
+.header {
+    background: #2d3748;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 a {
+    color: #cbd5e0;
+    margin-left: 1.5rem;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    text-decoration: underline;
+}
+
+h1 a.activate {
+    font-weight: bold;
+    color: white;
+}
+
+nav a {
+    color: #cbd5e0;
+    margin-left: 1.5rem;
+    text-decoration: none;
+}
+
+nav a.active {
+    font-weight: bold;
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

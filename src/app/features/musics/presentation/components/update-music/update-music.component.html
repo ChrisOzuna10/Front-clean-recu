@@ -1,0 +1,14 @@
+<div class="update-music-form">
+  <h2>Actualizar Música</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input id="title" type="text" [(ngModel)]="title" name="title" (ngModelChange)="onChangeTitle($event)" />
+    </div>
+    <div class="form-group">
+      <label for="gender">Género:</label>
+      <input id="gender" type="text" [(ngModel)]="gender" name="gender" (ngModelChange)="onChangeGender($event)" />
+    </div>
+    <button type="submit" class="btn-submit">Actualizar</button>
+  </form>
+</div>

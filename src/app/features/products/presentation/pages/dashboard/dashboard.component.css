@@ -1,0 +1,31 @@
+.dashboard {
+    padding: 2rem;
+    text-align: center;
+    background: #f7fafc;
+    min-height: 80vh;
+}
+
+.card-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    display: block;
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    color: #2d3748;
+    font-size: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}

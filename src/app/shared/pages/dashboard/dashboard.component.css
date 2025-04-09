@@ -1,0 +1,29 @@
+.dashboard-container {
+    padding: 2rem;
+    text-align: center;
+    min-height: calc(100vh - 160px);
+    /* Ajusta al tamaño del header + footer */
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.dashboard-card {
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    color: #333;
+    font-weight: 500;
+}
+
+.dashboard-card:hover {
+    background-color: #d3d3f5;
+}

@@ -1,0 +1,8 @@
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div *ngIf="!isLoading && !error && music">
+  <h3>{{ music.title }}</h3>
+  <p>{{ music.gender }}</p>
+</div>
+<p *ngIf="!music">No se encontró música.</p>

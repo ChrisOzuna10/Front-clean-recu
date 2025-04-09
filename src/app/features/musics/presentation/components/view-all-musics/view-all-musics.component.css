@@ -1,0 +1,25 @@
+.music-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+button {
+    margin-right: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:first-of-type {
+    background-color: #3182ce;
+    color: white;
+}
+
+button:last-of-type {
+    background-color: #e53e3e;
+    color: white;
+}

@@ -1,0 +1,33 @@
+<div class="create-music-form">
+  <h2>Crear Nuevo Producto</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="name"
+        name="name"
+        placeholder="Nombre del producto"
+        (ngModelChange)="onChangeName($event)"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="price">Precio:</label>
+      <input
+        type="number"
+        id="price"
+        [(ngModel)]="price"
+        name="price"
+        placeholder="Precio del producto"
+        (ngModelChange)="onChangePrice($event)"
+      />
+    </div>
+
+    <button type="submit" class="btn-submit">Crear Producto</button>
+  </form>
+
+  <p *ngIf="isValid" class="success-msg">✅ Producto creado correctamente.</p>
+  <div *ngIf="error" class="error">{{ error }}</div>
+</div>

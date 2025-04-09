@@ -1,0 +1,12 @@
+.view-products-container {
+    padding: 2rem;
+    background-color: #f7fafc;
+    min-height: 80vh;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #2d3748;
+}

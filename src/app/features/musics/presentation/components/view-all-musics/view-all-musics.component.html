@@ -1,0 +1,14 @@
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div *ngIf="!isLoading && !error">
+  <ul>
+    <li *ngFor="let music of musics" class="music-item">
+      <h3>{{ music.title }}</h3>
+      <p>{{ music.gender }}</p>
+
+      <button (click)="onEdit(music.id)">✏️ Editar</button>
+      <button (click)="onDelete(music.id)">🗑️ Eliminar</button>
+    </li>
+  </ul>
+</div>
